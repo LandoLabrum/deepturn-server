@@ -1,0 +1,31 @@
+{
+   "uuids": {
+      "phone_id": "15c8c298-479a-4d2f-8a6e-41c32139be1c",
+      "uuid": "86b5d662-e939-4c69-a6b2-3ee83b4a7d78",
+      "client_session_id": "e8266cf2-b3b7-4ac9-a6a8-ddafabbbd80d",
+      "advertising_id": "b9f85005-4647-4f18-b650-0695a66713f6",
+      "device_id": "android-6eca86339f8f09ce"
+   },
+   "authorization_data": {
+      "ds_user_id": "8340151469",
+      "sessionid": "8340151469%3ABHlHfc9mtyoniq%3A27",
+      "should_use_header_over_cookies": true
+   },
+   "cookies": {},
+   "last_login": 1627024011.836362,
+   "device_settings": {
+      "app_version": "194.0.0.36.172",
+      "android_version": 26,
+      "android_release": "8.0.0",
+      "dpi": "480dpi",
+      "resolution": "1080x1920",
+      "manufacturer": "Xiaomi",
+      "device": "MI 5s",
+      "model": "capricorn",
+      "cpu": "qcom",
+      "version_code": "301484483"
+   },
+   "user_agent": "Instagram 194.0.0.36.172 Android (26/8.0.0; 480dpi; 1080x1920; Xiaomi; MI 5s; capricorn; qcom; en_US; 301484483)",
+   "country": "US",
+   "locale": "en_US"
+}

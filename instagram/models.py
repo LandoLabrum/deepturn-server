@@ -1,0 +1,57 @@
+from django.db import models
+
+
+class Account(models.Model):
+   id = models.BigIntegerField(primary_key=True, unique=True,)
+   password = models.CharField(null=True, blank=True, max_length=500)
+   username = models.CharField(null=True, blank=True, max_length=50)
+   email = models.EmailField(null=True, blank=True, max_length=50)
+   profile_pic = models.ImageField(null=True, blank=True, default='default.jpg', upload_to='profile_pics')
+   full_name = models.CharField(null=True, blank=True, max_length=500)
+   is_private = models.BooleanField(null=True, blank=True)
+   is_verified = models.BooleanField(null=True, blank=True)
+   has_anonymous_profile_picture = models.BooleanField(null=True, blank=True)
+   biography = models.CharField(null=True, blank=True, max_length=500)
+   can_link_entities_in_bio = models.BooleanField(null=True, blank=True)
+   biography_with_entities = models.JSONField(null=True, blank=True)
+   external_url = models.CharField(null=True, blank=True, max_length=500)
+   reel_auto_archive = models.CharField(null=True, blank=True, max_length=500)
+   show_conversion_edit_entry = models.BooleanField(null=True, blank=True)
+   allowed_commenter_type = models.CharField(null=True, blank=True, max_length=500)
+   is_business = models.BooleanField(null=True, blank=True)
+   account_type = models.BigIntegerField(null=True, blank=True)
+   professional_conversion_suggested_account_type = models.BigIntegerField(null=True, blank=True)
+   is_call_to_action_enabled = models.BooleanField(null=True, blank=True)
+   personal_account_ads_page_name = models.CharField(null=True, blank=True, max_length=500)
+   personal_account_ads_page_id = models.CharField(null=True, blank=True, max_length=500)
+   account_badges = models.JSONField(null=True, blank=True)
+   fbid_v2 = models.BigIntegerField(null=True, blank=True)
+   is_muted_words_global_enabled = models.BooleanField(null=True, blank=True)
+   is_muted_words_custom_enabled = models.BooleanField(null=True, blank=True)
+   birthday = models.CharField(null=True, blank=True, max_length=500)
+   biography_product_mentions = models.JSONField(null=True, blank=True)
+   phone_number = models.CharField(null=True, blank=True, max_length=500)
+   gender = models.BigIntegerField(null=True, blank=True)
+   custom_gender = models.CharField(null=True, blank=True, max_length=500)
+   trusted_username = models.CharField(null=True, blank=True, max_length=500)
+   trust_days = models.BigIntegerField(null=True, blank=True)
+   profile_edit_params = models.JSONField(null=True, blank=True)
+   def __str__(self):
+      return str(self.id)
+
+class Cookies(models.Model):
+   account = models.OneToOneField(Account, primary_key=True, on_delete=models.CASCADE)
+   uuids = models.JSONField(null=True, blank=True)
+   authorization_data = models.JSONField(null=True, blank=True)
+   cookies = models.JSONField(null=True, blank=True)
+   device_settings = models.JSONField(null=True, blank=True)
+   last_login = models.FloatField(null=True, blank=True)
+   user_agent = models.CharField(null=True, blank=True, max_length=250)
+   country = models.CharField(null=True, blank=True, max_length=10)
+   locale = models.CharField(null=True, blank=True, max_length=10)
+
+class Bot(models.Model):
+   account = models.ForeignKey(Account, primary_key=True, on_delete=models.CASCADE)
+   customer = models.BigIntegerField(null=True, blank=True)
+   age = models.BigIntegerField(null=True, blank=True)
+
